@@ -11,9 +11,11 @@ var guessLeftNum = document.getElementById("guess-left");
 var wrongGuess = document.getElementById("guess-wrong");
 var randNum = Math.floor(Math.random() * alphabetLength);
 var randLetter = compLetters[randNum];
+var theirGuessArray = []
 console.log(randLetter);
 
 document.onkeyup = function(event) {
+    newFunction(); 
     var userLetter = event.key;
     if (userLetter===randLetter) {
         win++;
@@ -22,15 +24,30 @@ document.onkeyup = function(event) {
     }
     winNum.textContent = win;
     guessLeftNum.textContent = guessLeft;
-}
-var something = function(event){
-if (guessLeft<=0) {
-    guessLeft += 9 ;
-    guessLeftNum.textContent = guessLeft;
-    lose++;
-    loseNum.textContent = lose;
-} else{
+    theirGuessArray.push(userLetter);
+    console.log(theirGuessArray);
+    writeArray(theirGuessArray);
+    wrongGuess.textContent = writeArray(theirGuessArray);
+    
+};
+
+
+
+
+console.log("linked");
+
+function newFunction() {
+    if (guessLeft <= 0) {
+        guessLeft += 9;
+        guessLeftNum.textContent = guessLeft;
+        lose++;
+        loseNum.textContent = lose;
+    }
+};
+
+function writeArray(arr) {
+    for (i=0; i<arr.length; i++) {
+        arr[i];
+    }
 
 }
-}
-console.log("linked");
