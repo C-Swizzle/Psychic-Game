@@ -27,7 +27,7 @@ document.onkeyup = function(event) {
     theirGuessArray.push(userLetter);
     console.log(theirGuessArray);
     writeArray(theirGuessArray);
-    wrongGuess.textContent = writeArray(theirGuessArray);
+    wrongGuess.textContent = theirGuessArray;
     
 };
 
