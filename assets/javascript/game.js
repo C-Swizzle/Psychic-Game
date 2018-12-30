@@ -19,6 +19,8 @@ document.onkeyup = function(event) {
     var userLetter = event.key;
     if (userLetter===randLetter) {
         win++;
+        var randNum = Math.floor(Math.random() * alphabetLength);
+        var randLetter = compLetters[randNum];
     } else {
         guessLeft--;
     }
@@ -42,6 +44,7 @@ function newFunction() {
         guessLeftNum.textContent = guessLeft;
         lose++;
         loseNum.textContent = lose;
+        theirGuessArray =[];
     }
 };
 
