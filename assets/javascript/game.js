@@ -17,16 +17,20 @@ console.log(randLetter);
 document.onkeyup = function(event) {
     newFunction(); 
     var userLetter = event.key;
+    theirGuessArray.push(userLetter);
     if (userLetter===randLetter) {
         win++;
-        var randNum = Math.floor(Math.random() * alphabetLength);
-        var randLetter = compLetters[randNum];
+        randLetter = compLetters[Math.floor(Math.random() * alphabetLength)];
+        console.log(randLetter);
+        theirGuessArray = [];
+        guessLeft = 9;
+
     } else {
         guessLeft--;
     }
     winNum.textContent = win;
     guessLeftNum.textContent = guessLeft;
-    theirGuessArray.push(userLetter);
+   
     console.log(theirGuessArray);
     writeArray(theirGuessArray);
     wrongGuess.textContent = theirGuessArray;
@@ -34,17 +38,15 @@ document.onkeyup = function(event) {
 };
 
 
-
-
-console.log("linked");
-
 function newFunction() {
     if (guessLeft <= 0) {
-        guessLeft += 9;
+        guessLeft = 9;
         guessLeftNum.textContent = guessLeft;
         lose++;
         loseNum.textContent = lose;
         theirGuessArray =[];
+        randLetter = compLetters[Math.floor(Math.random() * alphabetLength)];
+        console.log(randLetter);
     }
 };
 
