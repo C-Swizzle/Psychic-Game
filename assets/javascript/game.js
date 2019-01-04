@@ -15,7 +15,7 @@ var theirGuessArray = []
 console.log(randLetter);
 
 document.onkeyup = function(event) {
-    newFunction(); 
+    
     var userLetter = event.key;
     theirGuessArray.push(userLetter);
     if (userLetter===randLetter) {
@@ -24,8 +24,10 @@ document.onkeyup = function(event) {
         console.log(randLetter);
         theirGuessArray = [];
         guessLeft = 9;
+        newFunction(); 
     } else {
         guessLeft--;
+        newFunction(); 
     }
     winNum.textContent = win;
     guessLeftNum.textContent = guessLeft;
