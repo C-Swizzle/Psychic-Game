@@ -50,4 +50,4 @@ function writeArray(arr) {
         arr[i];
     }
 
-}
+};
