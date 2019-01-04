@@ -24,13 +24,11 @@ document.onkeyup = function(event) {
         console.log(randLetter);
         theirGuessArray = [];
         guessLeft = 9;
-
     } else {
         guessLeft--;
     }
     winNum.textContent = win;
     guessLeftNum.textContent = guessLeft;
-   
     console.log(theirGuessArray);
     writeArray(theirGuessArray);
     wrongGuess.textContent = theirGuessArray;
